@@ -1,9 +1,12 @@
 #' A scatter plot with marginal histograms
 #'
+#' Returns a scatter plot with marginal histograms
+#'
 #' @param x a quantitative vector
 #' @param y a quantitative vector
 #' @param xlab x label
 #' @param ylab y label
+#' @importFrom graphics barplot hist layout mtext par
 #'
 #' @returns A scatter plot with marginal histograms
 #' @export

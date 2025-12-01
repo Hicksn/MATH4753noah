@@ -1,0 +1,26 @@
+---
+title: "Birthday"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Birthday}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The probability of everyone in a group of n people having different birthdays, $$P(A)$$, can be represented as $$1-P(A^c)$$. $$P(A^c)$$ can be found by the combination of people with unique birthdays over the total combinations.
+$$P(A^c) = \frac{1*(1-\frac{1}{365}) * (1-\frac{2}{365})*(1-\frac{3}{365})*...(1-\frac{n-1}{365})}{(365)^n}$$
+This can be rewritten in r as 
+exp(lchoose(365,n) + lfactorial(n) - n*log(365))
+
+```{r setup}
+library(MATH4753noah)
+birthday(n = 20:25) 
+
+```

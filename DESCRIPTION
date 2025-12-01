@@ -1,18 +1,25 @@
 Package: MATH4753noah
 Type: Package
-Title: What the Package Does (Title Case)
+Title: MATH4753
 Version: 0.1.0
 Authors@R: c(
     person(
-      "Jane", "Doe",
-      email = "jane@example.com",
+      "Noah", "Hicks",
+      email = "noahfhicks@gmail.com",
       role = c("aut", "cre")
     )
   )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
-License: What license is it under?
+Description: Package for MATH 4753.
+      This is my package for the class.
+License: GPL-2
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/Hicksn/MATH4753noah
 BugReports: https://github.com/Hicksn/MATH4753noah/issues
+RoxygenNote: 7.3.3
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+Config/testthat/edition: 3
