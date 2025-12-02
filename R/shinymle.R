@@ -6,5 +6,5 @@
 #' @examples shinymle()
 #' \dontrun{shinymle()}
 shinymle <- function(){
-  shiny::runApp(system.file("SHINY", package = "MATH4753noah"), launch.browser = TRUE)
+  #shiny::runApp(system.file("SHINY", package = "MATH4753noah"), launch.browser = TRUE)
 }

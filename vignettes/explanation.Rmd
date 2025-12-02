@@ -1,0 +1,61 @@
+---
+title: "What the package does"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{What the package does}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MATH4753noah)
+```
+
+# Intro 
+
+This is my final package for MATH4751. In this file will explain the use of scatterhist, ntickets, mycltb, and myboot. Addionally this file will explain and analyze fire.rda.
+
+## scatterhist
+
+scatterhist takes two vectors, x and y, and creates a scatterplot of the points with histograms of the vectors.
+```{r}
+# set seed for consistent results
+set.seed(40)
+# getting random data to plot
+x = rnorm(10, 10, 5)
+y = rnorm(10, 5, 8)
+# plotting the random data
+MATH4753noah::scatterhist(x, y, "X", "Y")
+```
+
+## ntickets
+
+ntickets gives the solution to the "overbooking problem". Given a number of seats to sell tickets for, the desired probability of overbooking occurring, and the probability of a ticket holder to take a seat, it will output two graphs for the discrete and continuous cases and will list the solutions.
+```{r}
+MATH4753noah::ntickets(400, .04, .95)
+```
+
+## mycltb
+
+mtcltb returns a graph of a histogram of the mean value of binomial distributions. The parameters are the sample size of the binomial, the probability of success of the binomial, and the number of distributions created.
+```{r}
+MATH4753noah::mycltb(10, 10000, p=0.25)
+```
+
+## myboot
+
+myboot2 bootstraps a given sample to create a confidence interval for a given statistic. It will output a graph of the results of the bootstrapping along with the interval. 
+This function will be used to analyze the fire data. fire holds the distance traveled and damage done by fires. Using this data as a sample, myboot will find a confidence interval of the mean damage for the population of all fires.
+```{r}
+fires_damage = MATH4753noah::fire$DAMAGE
+head(fires_damage)
+ci = myboot2(iter = 10000, x = fires_damage, alpha = 0.05)
+ci$ci
+```
